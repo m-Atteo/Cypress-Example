@@ -1,0 +1,23 @@
+{
+  "name": "cypress-exemple",
+  "version": "1.0.0",
+  "description": "This is a script automated test with cypress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-Atteo/Cypress-Exemple.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-Atteo/Cypress-Exemple/issues"
+  },
+  "homepage": "https://github.com/m-Atteo/Cypress-Exemple#readme",
+  "devDependencies": {
+    "cypress": "^12.5.1"
+  }
+}
