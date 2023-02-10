@@ -8,6 +8,11 @@ module.exports = defineConfig({
   //openMode = local / runMode = remote
   retries: {openMode: 1, runMode:1},
 
+  reporter: 'mochawesome',
+    reporterOptions: {
+      hmlt: true
+    },
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -19,4 +24,5 @@ module.exports = defineConfig({
     //global url to run test files
     //baseUrl: '',
   },
+    
 });
