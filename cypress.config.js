@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 
 module.exports = defineConfig({
+  projectId: '7t9x5k',
   viewportHeight: 900,
   viewportWidth: 1500,
   defaultCommandTimeout: 2000,
@@ -10,6 +11,7 @@ module.exports = defineConfig({
 
   reporter: 'mochawesome',
     reporterOptions: {
+      reportFilename: "[name]-[status]_[datetime]-report",
       hmlt: true
     },
 
