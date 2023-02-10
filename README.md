@@ -1,22 +1,25 @@
 # Cypress-Exemple
-In order to execute this project you will need node js and cypress in your system
 
-1- install dependences on folder backend:
+### This project runs a cypress automated test on a local ambient. The tests makes a register on a ONG website and logs in via data passed by query to the API, it responses will be used to create a ID to login with the newly registered account. All requests in the process are validated on code. 
 
-cd backend &&
-npm install
+>In order to execute this project you will need node js and cypress in your system
 
-2- install dependences on folder frontend:
+#### install dependences on folder backend:
 
-cd frontend &&
-npm install
+* cd backend
+* npm install
 
-3- after start both on each folder
+#### install dependences on folder frontend:
 
-npm start
+* cd frontend
+* npm install
 
-4- When the aplication is up start cypress to run the tests
+#### after start both on each folder
 
-./node_modules/.bin/cypress open
+* npm start
 
-5- Follow the instructions on screen to run tests E2E
+#### When the aplication is up start cypress to run the tests
+
+* ./node_modules/.bin/cypress open
+
+#### Follow the instructions on screen to run tests E2E
