@@ -1,4 +1,4 @@
-# Cypress-Exemple
+# Cypress-Example
 
 ### This project runs a cypress automated test on a local ambient. The tests makes a register on a ONG website and logs in via data passed by query to the API, it responses will be used to create a ID to login with the newly registered account. All requests in the process are validated on code. 
 
