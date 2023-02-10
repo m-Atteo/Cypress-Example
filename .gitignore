@@ -1,4 +1,5 @@
 node_modules
 cypress/videos/**.mp4
 cypress/screenshots/**
-mochawesome-report/**
+mochawesome-report/**.json
+mochawesome-report/**.html
