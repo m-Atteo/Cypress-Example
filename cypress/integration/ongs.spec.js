@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-describe('Ongs', () => {
-    it('devem poder realizar um cadastro', () => {
+describe('Register ONG and Login', () => {
+    it('Should be able to register', () => {
         cy.fixture('user').then((userData) =>{
             cy.get('.back-link').click();
             cy.get('[data-cy="name"]').type(userData.name);
@@ -18,7 +18,7 @@ describe('Ongs', () => {
         cy.wait('@postOng').its('response.statusCode').should('eq', 200)
     });
 
-    it('deve poder realizar um login no sistema', () => {
+    it('Should be able to login', () => {
         
         const createOngId = Cypress.env('createOngId');
         
