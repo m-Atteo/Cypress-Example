@@ -33,9 +33,9 @@ Cypress.Commands.add("createOng", () => {
             body: {
                 name: userData.name,
                 email: userData.email,
-                whatsapp :userData.whatsapp,
-                city : userData.city,
-                uf : userData.uf
+                whatsapp: userData.whatsapp,
+                city: userData.city,
+                uf: userData.uf
             }
         }).then(response => {
             expect(response.body.id).is.not.null;
