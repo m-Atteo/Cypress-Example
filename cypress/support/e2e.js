@@ -19,6 +19,7 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-before(() => {
+beforeEach(() => {
+    cy.visit('http://localhost:3000/');
     cy.createOng();
 });

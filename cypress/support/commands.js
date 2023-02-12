@@ -25,20 +25,23 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("createOng", () => {
-    cy.request({
-        method: 'POST',
-        url: 'http://localhost:3333/ongs',
-        body: {
-            name: "Pepe Gatinhos",
-            email: "pepeGatinhosONG@gmail.com",
-            whatsapp :"219199199191",
-            city :"Rio de Janeiro",
-            uf :"RJ"
-        }
-    }).then(response => {
-        expect(response.body.id).is.not.null;
-        cy.log(response.body.id)  
-
-        Cypress.env('createOngId', response.body.id)
+    cy.fixture('user').then((userData) => {
+       // cy.log(userData.);
+        cy.request({
+            method: 'POST',
+            url: 'http://localhost:3333/ongs',
+            body: {
+                name: userData.name,
+                email: userData.email,
+                whatsapp :userData.whatsapp,
+                city : userData.city,
+                uf : userData.uf
+            }
+        }).then(response => {
+            expect(response.body.id).is.not.null;
+            cy.log(response.body.id)  
+    
+            Cypress.env('createOngId', response.body.id)
         });
     });
+});

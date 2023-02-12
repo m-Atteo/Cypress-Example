@@ -2,12 +2,14 @@
 
 describe('Ongs', () => {
     it('devem poder realizar um cadastro', () => {
-        cy.visit('http://localhost:3000/register');
-        cy.get('[data-cy="name"]').type('Pepe Gatinhos');
-        cy.get('[data-cy="email"]').type('pepeGatinhosONG@gmail.com');
-        cy.get('[data-cy="whatsapp"]').type('21919919199');
-        cy.get('[data-cy="city"]').type('Rio de Janeiro');
-        cy.get('[data-cy="uf"]').type('RJ');
+        cy.fixture('user').then((userData) =>{
+            cy.get('.back-link').click();
+            cy.get('[data-cy="name"]').type(userData.name);
+            cy.get('[data-cy="email"]').type(userData.email);
+            cy.get('[data-cy="whatsapp"]').type(userData.whatsapp);
+            cy.get('[data-cy="city"]').type(userData.city);
+            cy.get('[data-cy="uf"]').type(userData.uf);
+        })
         
         //routing
         cy.intercept('POST', 'http://localhost:3333/ongs').as('postOng');
@@ -19,10 +21,7 @@ describe('Ongs', () => {
     it('deve poder realizar um login no sistema', () => {
         
         const createOngId = Cypress.env('createOngId');
-
-        cy.log(createOngId);
-
-        cy.visit('http://localhost:3000/');
+        
         cy.get('input').type(createOngId);
 
         //routing
